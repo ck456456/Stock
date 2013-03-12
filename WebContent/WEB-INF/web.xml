@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+	<display-name>Stock</display-name>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/classes/Spring.xml</param-value>
+	</context-param>
+	<context-param>
+		<param-name>upload folder</param-name>
+		<param-value>atta</param-value>
+	</context-param>
+	<listener>
+		<listener-class>
+   			org.springframework.web.context.ContextLoaderListener
+		</listener-class>
+	</listener>
+	
+	<filter>
+        <filter-name>struts2</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.FilterDispatcher</filter-class>
+        <!--    
+   		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+		 -->
+	</filter>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
+
+<!-- 	
+	<filter>
+        <filter-name>struts2</filter-name>   
+		<filter-class>org.apache.struts2.dispatcher.FilterDispatcher</filter-class>
+		<init-param>
+			<param-name>struts.action.extension</param-name>
+			<param-value>action</param-value>
+		</init-param>
+			<init-param>
+			<param-name>actionPackages</param-name>
+			<param-value>com.helloweenvsfei.struts2.action</param-value>
+			</init-param>
+	</filter>
+	<filter>
+		<filter-name>NtlmHttpFilter</filter-name>
+		<filter-class>jcifs.http.NtlmHttpFilter</filter-class>
+		<init-param>
+			<param-name>jcifs.smb.client.domain</param-name>
+			<param-value>PRODISC</param-value>
+		</init-param>
+    	<init-param>
+        	<param-name>jcifs.smb.client.username</param-name>
+        	<param-value>svcSQL</param-value>
+    	</init-param>
+    	<init-param>
+        	<param-name>jcifs.smb.client.password</param-name>
+        	<param-value>SQL2KDumbOracleBetter</param-value>
+    	</init-param>
+		<init-param>
+			<param-name>jcifs.http.domainController</param-name>
+			<param-value>172.16.88.10</param-value>
+		</init-param>
+		<init-param>
+			<param-name>jcifs.netbios.wins</param-name>
+			<param-value>172.16.88.10, 172.16.233.252, 172.16.241.252, 172.16.10.252</param-value>
+		</init-param>
+		<init-param>
+        	<param-name>jcifs.util.loglevel</param-name>
+        	<param-value>2</param-value>
+				0: Nothing 
+				1: Critical [default] 
+				2: Basic info. (Can be logged under load) 
+				3: Detailed info. (Highest recommended level for production use) 
+				4: Individual smb messages 
+				6: Hex dumps  
+			http://blog.tenyi.com/2009/10/jcifs-ntlm-http.html
+			http://jcifs.samba.org/src/docs/ntlmhttpauth.html
+			http://stackoverflow.com/questions/726249/detect-user-logged-on-a-computer-using-java-web-app 
+    	</init-param>
+		<init-param>
+		        <param-name>jcifs.smb.lmCompatibility</param-name>
+		        <param-value>0</param-value>
+		</init-param> 
+		<init-param>   
+    		<param-name>jcifs.smb.client.useExtenededSecurity</param-name>   
+   			<param-value>false</param-value> 
+		</init-param>
+	    <init-param>
+	        <param-name>jcifs.http.loadBalance</param-name>
+	        <param-value>false</param-value>
+	    </init-param>
+		<init-param>
+			<param-name>jcifs.smb.client.soTimeout</param-name>
+			<param-value>35000</param-value>
+		</init-param>
+	</filter>
+		
+	-->

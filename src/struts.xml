@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>    
+	<!--下述敘述是將struts2交給spring管理-->
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="struts.devMode" value="false" />
+	<!-- 上傳檔案最大為  1024*1024*21 21M 20972544 -->
+	
+	<constant name="struts.multipart.maxSize" value="20972544" />
+		
+	<include file="s2_action.xml"></include>
+	<include file="s2_json.xml"></include>
+</struts>

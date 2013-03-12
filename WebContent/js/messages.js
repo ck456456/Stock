@@ -1,0 +1,9 @@
+msg_fg_errormsg= '連線資料庫失敗';
+msg_fg_pagestat= '檢視{from}到{to}，全部共有{total}筆資料'; 
+msg_fg_procmsg= '資料讀取中，請稍後…';
+msg_fg_nomsg= '找不到符合絛件的資料';
+msg_add= '新增';
+msg_mdy= '修改';
+msg_del= '刪除';
+msg_save= '存入';
+msg_ref= '整理';

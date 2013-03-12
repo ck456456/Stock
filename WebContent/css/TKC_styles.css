@@ -1,0 +1,50 @@
+/*-----------------------------TKC_edit-------------------*/
+#TKC_edit{
+}
+#TKC_edit table{
+	width: 100%;
+	border: 1px solid #ccc;
+}
+#TKC_edit th {
+	background: #ccc;
+	font-size: 25px;
+	border: 1px solid #000000; 
+}
+#TKC_edit td { 
+}
+/*-----------------------------TKC_menu-------------------*/
+#TKC_menu{
+	width:100%;
+	float:left;
+	margin: 0px 0px 0px 0px;
+	background-color: #d7e1eb;
+}
+#TKC_menu ul{
+	display:block;
+	list-style:none;
+	padding:9px 0 0 10px;
+	margin:0px;
+}
+#TKC_menu ul li{
+	display:inline;
+	padding:0px;
+	margin:0px;
+	height:20px;
+}
+#TKC_menu ul li a{
+	height:20px;
+	display:block;
+	padding:0px 10px 0 10px;
+	margin:0 4px 0 4px;
+	float:left;
+	text-decoration:none;
+	text-align:center;
+	color:#37728e;
+	font-size:13px;
+	line-height:18px;
+}
+#TKC_menu ul li a:hover{
+	color: Red;
+	text-decoration: underline;
+	font-weight: bolder
+}

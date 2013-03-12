@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<bean id="dao" class="tw.com.prodisc.stock.dao.DaoImpl" scope="prototype">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="baseTransactionProxy" lazy-init="true"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager"
+			ref="hibernateTransactionManager">
+		</property>
+		<property name="transactionAttributeSource"
+			ref="hibernateTransactionAttributeSource">
+		</property>
+	</bean>
+	
+	<bean id="STKF01" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="tw.com.prodisc.stock.service.impl.SImplSTKF01">
+				  <property name="dao" ref="dao"></property>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="STKF02" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="tw.com.prodisc.stock.service.impl.SImplSTKF02">
+				  <property name="dao" ref="dao"></property>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="Json01" scope="prototype" class="tw.com.prodisc.stock.json.Json01">
+	    <property name="s_STKF01">       
+	       <ref bean="STKF01"/>
+	    </property>
+	    <property name="s_STKF02">       
+	       <ref bean="STKF02"/>
+	    </property>
+    </bean>
+	
+</beans>

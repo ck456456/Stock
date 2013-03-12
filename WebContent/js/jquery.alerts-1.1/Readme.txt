@@ -1,0 +1,1 @@
+http://www.abeautifulsite.net/blog/2008/12/jquery-alert-dialogs/
